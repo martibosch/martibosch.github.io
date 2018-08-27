@@ -1,46 +1,12 @@
 ---
 title: About
 layout: page
+permalink: /about/
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
+![Profile Image]({{ site.url }}/{{ site.profile-picture }})
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+I am a PhD student in Civil and Environmental Engineering in the [CEAT](http://ceat.epfl.ch/) team of the [École polytechnique fédérale de Lausanne (EPFL)](http://www.epfl.ch), focusing on the assessment of the impacts of urban patterns on transportation, the environment and human well being. I try to address such question from the complexity sciences, understanding urban patterns as the spatial signature of multiple interactions between urban residents, firms and governmental bodies.
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+Before that I was an intern in the [STEEP](https://team.inria.fr/steep/) group of the INRIA Rhone-Alpes, working on a project to measure urban sprawl through the analysis of crowd-sourced data. This internship corresponded to my Master's Thesis from the [Artificial Intelligence and the Web](http://mosig.imag.fr/ProgramEn/M2S1#AIW) specialization of the Master of Science in Informatics at Grenoble.
 
-<h2>Skills</h2>
-
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
-
-<h2>Projects</h2>
-
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+I have also interned the [http://www.cern.ch](CERN) in the summer of 2015, and the [Tyrex](https://team.inria.fr/tyrex/) team of INRIA Rhone-Alpes in 2014.
