@@ -10,12 +10,6 @@ description: A blog about technology and stuff related
 external-image: false
 profile-picture: assets/images/profile.jpg
 
-# If you want to include your resume, set to true
-# and specify source (external or local).
-resume: true
-resume-external: true
-resume-url: https://google.com/?q=my+resume
-
 url: https://koppl.in/indigo
 # your url: http://USERNAME.github.io
 
@@ -82,6 +76,10 @@ projects: true
 # if you don't need "about" or "blog", comment them out below
 about: true
 blog: true
+
+# If you want to include your resume, set to true
+# and specify source (external or local).
+resume: true
 
 # do you want to show the "read time" of the posts?
 read-time: true
