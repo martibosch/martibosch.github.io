@@ -85,8 +85,14 @@ figcaption
 		font-size: 1.2rem
 
 blockquote
-	padding-left: 15px
-	border-left: 3px solid #eee
+	padding: 0px 20px
+	background: #efefef
+	border-left: 3px solid #aaa
+	border-radius: 0px 10px 10px 0px
+
+	p
+		padding: 10px 0        
+        
 
 hr
 	border: none
@@ -103,9 +109,8 @@ code,
 tt
 	padding: 1px 0
 	font-family: $fontMonospace
-	font-size: 12px
+	font-size: 14px
 	line-height: 20px
-	background: #fff
 	border-radius: 2px
 	border-radius: 2px
 
@@ -118,9 +123,15 @@ pre
 	font-size: 1.2rem
 	line-height: 2rem
 	overflow: auto
-	background: #fff
 	border: 1px solid $epsilon
 	border-radius: 2px
+
+p, li
+	code
+		background-color: #444
+		border-radius: 2px
+		color: #ccc
+		padding: 3px 6px 1px
 
 .wrapper-normal,
 .wrapper-large
