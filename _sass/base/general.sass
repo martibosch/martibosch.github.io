@@ -50,7 +50,7 @@ p
 		letter-spacing: 0.2px
 
 strong
-	font-weight: 400
+	font-weight: 600
 	color: #000
 
 ul,
@@ -59,6 +59,24 @@ ol
 		line-height: 2.4rem
 		font-weight: 300
 		color: $alpha
+
+table
+	font-size: 14px
+	border-collapse: collapse
+
+thead
+	> tr
+		background-color: #f3f3f3
+		border: #aaa solid
+		border-width: 2px 0
+
+tbody
+	> tr:last-child
+		border: #aaa solid
+		border-width: 0 0 2px 0
+
+td, th
+	padding: 10px 5px
 
 img,
 pre,
@@ -86,13 +104,13 @@ figcaption
 
 blockquote
 	padding: 0px 20px
-	background: #efefef
+	background: #f3f3f3
 	border-left: 3px solid #aaa
 	border-radius: 0px 10px 10px 0px
 
 	p
-		padding: 10px 0        
-        
+		font-style: italic
+		padding: 10px 0
 
 hr
 	border: none
