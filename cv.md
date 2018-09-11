@@ -4,8 +4,6 @@ layout:    page
 permalink: /cv/
 ---
 
-# CV
-
 ## Education
 
 **PhD in Civil and Environmental Engineering**, [École Polytechnique Fédérale de Lausanne](https://www.epfl.ch) - *(current)*

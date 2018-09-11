@@ -1,8 +1,4 @@
-{% if page.title == "Home"
-   or page.title == "Blog"
-   or page.title == "Projects"
-   or page.title == "Tags"
-%}{% assign showHeader = true %}{% endif %}
+{% if page.title == "Home" %}{% assign showHeader = true %}{% endif %}
 
 {% if showHeader == true %}
     <header class="header-home {% if site.animation %}animated{% endif %}">
@@ -19,6 +15,10 @@
         <h1 class="title">{{ site.name }}</h1>
         <h2 class="description">{{ site.bio }}</h2>
     </header>
+{% else %}
+    {% unless page.tags %}
+        <h1>{{ page.title }}</h1>
+    {% endunless %}
 {% endif %}
 
 {% include nav.html %}
