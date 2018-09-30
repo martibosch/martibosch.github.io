@@ -27,6 +27,10 @@ layout: compress
         <style>
          {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
          {{ scss_sheet | scssify }}
+         {% if page.category == 'fait-a-sant-feliu' %}
+         {% capture fsf_sheet %}{% include fait-a-sant-feliu.scss %}{% endcapture %}
+         {{ fsf_sheet | scssify }}
+         {% endif %}
         </style>
 
     </head>

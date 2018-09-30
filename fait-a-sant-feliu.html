@@ -1,0 +1,28 @@
+---
+layout:    page
+title:     Fait à Sant Feliu
+category:  fait-a-sant-feliu
+permalink: /fait-a-sant-feliu/
+---
+
+<section class="list">
+    {% if site.paginate %}
+    {% for post in paginator.posts %}
+    {% if post.category == 'fait-a-sant-feliu' %}
+    {% if post.hidden != true %}
+    {% include blog-post.html %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+
+    {% include pagination.html%}
+    {% else %}
+    {% for post in site.posts %}
+    {% if post.category == 'fait-a-sant-feliu' %}
+    {% if post.hidden != true %}
+    {% include blog-post.html %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+</section>
