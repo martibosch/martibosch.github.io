@@ -1,9 +1,8 @@
 ---
-layout: page
+layout: list
 title: Tags
 ---
-<section class="list">
-
+<div class="post-tags">
     {% assign tags_list = site.tags %}
 
     {% if tags_list.first[0] == null %}
@@ -17,12 +16,13 @@ title: Tags
     {% endif %}
 
     {% assign tags_list = nil %}
-</section>
+
+</div>
 
 <hr>
 
-<section class="tag-list">
-    {% for tag in site.tags  %}
+
+{% for tag in site.tags  %}
     <h2 class="title" id="{{ tag[0] | slugify }}">#{{ tag[0] }}</h2>
 
     <ul class="list">
@@ -44,5 +44,4 @@ title: Tags
     </ul>
 
     <div class="breaker"></div>
-    {% endfor %}
-</section>
+{% endfor %}

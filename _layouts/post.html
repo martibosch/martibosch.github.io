@@ -1,6 +1,8 @@
 ---
-layout: page
+layout: default
 ---
+
+{% include header.html %}
 
 {% if page.image and page.headerImage %}
     <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
@@ -57,3 +59,5 @@ layout: page
 {% if site.disqus.categories contains page.category %}
     {% include disqus.html %}
 {% endif %}
+
+{% include footer.html %}
