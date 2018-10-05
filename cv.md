@@ -16,11 +16,11 @@ permalink: /cv/
 
 **Doctoral Assistant**, [Urban and regional planning community (CEAT)](http://ceat.epfl.ch/), EPFL, Lausanne, Switzerland - *(current)*
 
-**Research Intern**, [STEEP team](https://team.inria.fr/steep/), INRIA Rhone-Alpes, Grenoble, France - *February to July 2016*
+**Research Intern**, [STEEP team](https://team.inria.fr/steep/), INRIA Rhone-Alpes, Grenoble, France - *Feb to Jul 2016*
 
-**Summer Student**, [IT department](http://information-technology.web.cern.ch/), CERN, Geneva, Switzerland - *June to September 2015*
+**Summer Student**, [IT department](http://information-technology.web.cern.ch/), CERN, Geneva, Switzerland - *Jun to Sep 2015*
 
-**Research Intern**, [Tyrex team](https://tyrex.inria.fr/), INRIA Rhone-Alpes, Grenoble, France - *February to July 2014*
+**Research Intern**, [Tyrex team](https://tyrex.inria.fr/), INRIA Rhone-Alpes, Grenoble, France - *Feb to Jul 2014*
 
 ## Publications
 
