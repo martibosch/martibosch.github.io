@@ -16,6 +16,9 @@
         font-weight: 500
         transition: all ease-in-out .2s
 
+        @media #{$mobile}
+          width: 100%
+
       // maybe we can't nest html5 elements
       // can you help me?
       > aside
@@ -28,6 +31,13 @@
         color: $gama
         text-align: right
         transition: all ease-in-out .2s
+
+        @media #{$mobile}
+          float: none
+          padding-bottom: 2px
+          position: static
+          text-align: left
+          width: auto
   
       > .emoji
         display: inline
