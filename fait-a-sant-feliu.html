@@ -9,7 +9,7 @@ permalink: /fait-a-sant-feliu/
     {% for post in paginator.posts %}
         {% if post.category == 'fait-a-sant-feliu' %}
             {% if post.hidden != true %}
-                {% include blog-post.html %}
+                {% include post-list-item.html %}
             {% endif %}
         {% endif %}
     {% endfor %}
@@ -19,7 +19,7 @@ permalink: /fait-a-sant-feliu/
     {% for post in site.posts %}
         {% if post.category == 'fait-a-sant-feliu' %}
             {% if post.hidden != true %}
-                {% include blog-post.html %}
+                {% include post-list-item.html %}
             {% endif %}
         {% endif %}
     {% endfor %}
