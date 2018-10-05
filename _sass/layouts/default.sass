@@ -1,0 +1,62 @@
+.page
+  margin-top: 125px
+
+  > h1
+    text-align: center
+    margin-bottom: 6rem
+
+  > h2, > h3, > h4
+    margin-top: 40px
+
+    a
+      text-decoration: none
+
+  > section
+    border-top: 1px solid $epsilon
+    margin-top: 30px
+    padding-top: 40px
+    position: relative
+
+    &:before
+        display: block
+        content: " "
+        width: 7px
+        height: 7px
+        border: $epsilon 1px solid
+        position: absolute
+        top: -5px
+        left: 50%
+        margin-left: -5px
+        background: #FFF
+        box-shadow: #FFF 0 0 0 5px
+        border-radius: 3px
+
+
+      
+.about
+  img
+    width: 50%
+    margin: 0 auto
+    display: block
+
+.tag-list
+  color: $gama
+  font-weight: 300
+  font-size: 1.4rem
+  text-transform: uppercase
+  display: block
+  margin-bottom: 4rem
+  letter-spacing: 1px
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+
+  > .item
+    padding: 2px 8px
+    border-radius: 3px
+    font-size: 1.1rem
+    background: $epsilon
+    color: $alpha
+    letter-spacing: 1px
+    margin: 3px 1px
+    text-decoration: none
+    display: inline-block

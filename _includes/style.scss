@@ -5,10 +5,10 @@
 @import "base/general";
 @import "base/helpers";
 
-@import "pages/home-blog-projects";
-@import "pages/page";
-@import "pages/post";
-@import "pages/tags";
+@import "layouts/default";
+@import "layouts/list";
+@import "layouts/post";
+@import "layouts/static-page";
 
 @import "components/author";
 @import "components/disqus";

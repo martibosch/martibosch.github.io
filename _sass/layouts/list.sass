@@ -1,0 +1,44 @@
+.post-list
+  > .item
+    display: block
+    width: 95%
+    margin: 0 auto
+
+    > .url
+      width: 100%
+      display: block
+      padding: 20px 0 5px
+      text-decoration: none
+
+      > .title
+        margin: 0
+        width: 75%
+        font-weight: 500
+        transition: all ease-in-out .2s
+
+      // maybe we can't nest html5 elements
+      // can you help me?
+      > aside
+        position: relative
+        top: 2px
+        margin: 0
+        width: 25%
+        float: right
+        font-weight: 300
+        color: $gama
+        text-align: right
+        transition: all ease-in-out .2s
+  
+      > .emoji
+        display: inline
+        position: relative
+        top: -4px
+        margin-right: 10px
+
+  > .item:hover
+    > .url
+      > .title
+        color: $link
+
+      > aside
+        color: $alpha
