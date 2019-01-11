@@ -91,11 +91,11 @@ Si bé una xarxa de governs locals prenent decisions que possiblement es solapen
 
 [^ant-colony]: Vegeu J. L. Deneubourg et al. "Probabilistic Behaviour in Ants: A Strategy of Errors?" (1983).
 
-[^dissipative]: Aquest tipus de sistemes, anomenats 'dissipatius' segons Prigogine, tendeixen a aprofitar les seves entrades d'energia per a generar ordre indern tot exportant-ne l'entropia a l'exterior. Així doncs, la contradicció amb el segon principi de la termodinàmica és només aparent, ja que el creixement obligatori de l'entropia només aplica a sistemes tancats, que no interactuen amb el medi que els envolta.
-
 [^brussels-collab]: De fet, les connexions entre les contribucions dels grups de Deneubourg i Prigogine no són casualitat: els seus respectius grups de recerca eren contemporanis en la mateixa Université Libre de Bruxelles i realitzaven importants intercanvis acadèmics.
 
-[^nouvelle-alliance]: Malgrat que la majoria de les contribucions de l'equip de Prigogine es van desenvolupar en el context de la termodinàmica, van adonar-se'n ràpidament que els seus descobriments eren rellevants per a un ampli grup de disciplines científiques. Aquesta ambició queda reflexada en el títol d'un dels seus treballs més influents: "La Nouvelle Alliance. Métamorphose de la Science" (traduït a l'anglès sota el títol "Order Out of Chaos: Man's New Dialogue with Nature"). Vegeu I. Prigogine i I. Stengers "Order Out of Chaos: Man's New Dialogue with Nature" (1984).
+[^nouvelle-alliance]: Més concretament, els sistemes 'dissipatius' tendeixen a aprofitar les seves entrades d'energia per a generar ordre indern tot exportant-ne l'entropia a l'exterior. 
+
+    Malgrat que la majoria de les contribucions de l'equip de Prigogine es van desenvolupar en el context de la termodinàmica, van adonar-se'n ràpidament que els seus descobriments eren rellevants per a un ampli grup de disciplines científiques. Aquesta ambició queda reflexada en el títol d'un dels seus treballs més influents: "La Nouvelle Alliance. Métamorphose de la Science" (traduït a l'anglès sota el títol "Order Out of Chaos: Man's New Dialogue with Nature"). Vegeu I. Prigogine i I. Stengers "Order Out of Chaos: Man's New Dialogue with Nature" (1984).
 
 [^thomas-schelling]: El nom del model ve del premi Nobel d'economia Thomas Schelling.
 
