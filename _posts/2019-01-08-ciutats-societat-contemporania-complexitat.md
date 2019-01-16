@@ -5,6 +5,9 @@ title:       "Les ciutats i la societat contemporània des de la teoria de la co
 author:      martibosch
 date:        2019-01-08
 category:    fait-a-sant-feliu
+media:       Fet a Sant Feliu
+media-link:  https://www.fetasantfeliu.cat/canal/102776/les-ciutats-i-la-societat-contemporania-des-de-la-teoria-de-la-complexitat
+media-date:  12 de gener del 2019
 tags:        ciutats societat complexitat
 ---
 
