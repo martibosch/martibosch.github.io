@@ -4,6 +4,8 @@ layout:    static-page
 permalink: /cv/
 ---
 
+You can also download [a pdf version of my CV](https://github.com/martibosch/martibosch.github.io/raw/master/assets/cv.pdf).
+
 ## Education
 
 **PhD in Civil and Environmental Engineering**, [École Polytechnique Fédérale de Lausanne](https://www.epfl.ch) - *(current)*
