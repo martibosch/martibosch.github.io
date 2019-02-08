@@ -35,7 +35,7 @@ layout: compress
 
     </head>
     <body>
-
+        
         <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
             {% if page.tags %}
                 <div class="post">
@@ -54,4 +54,7 @@ layout: compress
                         {% include icons.html %}
 
     </body>
+    {% if page.mermaid == true %}
+	{% include mermaid.html %}
+    {% endif %}
 </html>
