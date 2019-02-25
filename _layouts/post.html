@@ -24,12 +24,17 @@ layout: default
 {% endif %}
 
 {% if page.media %}
-    <p class="post-media">
+    <p class="headnote">
         {% if page.category == 'fait-a-sant-feliu' %}
             Aquesta entrada ha estat publicada com <a href="{{ page.media-link }}">article al diari {{ page.media }}</a> el {{ page.media-date }}
         {% else %}
             This post has been published as <a href="{{ page.media-link }}">article in {{ page.media }}</a> in {{ page.media-date }}
         {% endif %}
+    </p>
+{% endif %}
+{% if page.headnote %}
+    <p class="headnote">
+        {{  page.headnote }}
     </p>
 {% endif %}
 
