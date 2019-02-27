@@ -6,6 +6,7 @@ author:      martibosch
 date:        2019-01-16
 category:    blog
 tags:        cities society complexity
+headnote:    This is my translation of <a href="https://www.fetasantfeliu.cat/canal/102776/les-ciutats-i-la-societat-contemporania-des-de-la-teoria-de-la-complexitat">the article that I published in the science section of my local newspaper "Fet a Sant Feliu"</a> the 12 of January of 2019
 ---
 
 I have always found certain sadness underlying the second principle of thermodynamics. The first time that I learned about it was to know that it impedes us of building perpetual motion machines. Subsequently, high-school courses on physics and chemistry teach us how it is strongly tied to the notion of irreversibility. Formally, the second principle of thermodynamics establishes that the entropy of a closed system can only increase, and thus never decrease. But what is entropy?
@@ -77,8 +78,6 @@ Nonetheless, it seems that such perception does not prevail so much for local go
 > There is . . . a body of very important but unorganized knowledge which cannot possibly be called scientific . . . : the knowledge of the particular circumstances of time and place. It is with respect to this that practically every individual has some advantage over all others because he possesses unique information of which beneficial use might be made, but of which use can be made only if the decisions depending on it are left to him or are made with his active cooperation . . . Central planning based on statistical information by its nature cannot take direct account of these circumstances of time and place[^hayek-moroni]
 
 I hope that I have illustrated how in complex systems such as cities and the contemporary society, interventions do not always achieve the action-reaction effect that one might expect, not even when planned by experts with high academic qualifications. Therefore, I would like to raise a question concerning whether such interventions should be preferably managed by local governments, and by people that - no matter their academic training - know the particular circumstances of time and place of each neighborhood, village or city[^oaxaca-timezone], and to whom we can direct our concerns without the need to talk to three secretaries nor booking a flight to Madrid or Brussels. Although a network of local governments taking decisions that likely overlap between one city and another might seem inefficient when compared to a sole centralized government, according to Prigogine's theory, it is in fact such dispersed knowledge and distribution of actions that allows complex systems to adapt to the changing circumstances of the world that surrounds us.
-
-*This is my translation of [the article that I published in the science section of my local newspaper "Fet a Sant Feliu](https://www.fetasantfeliu.cat/canal/102776/les-ciutats-i-la-societat-contemporania-des-de-la-teoria-de-la-complexitat) the 12 of January of 2019*
 
 ---
 
