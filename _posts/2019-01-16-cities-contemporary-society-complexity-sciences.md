@@ -39,9 +39,9 @@ There exists thus, a class of systems which Prigogine called 'dissipative', whic
 
 ![Schelling's model animation](/assets/images/complexity_society/schelling-animation.gif "Animation generated with https://github.com/martibosch/mesa-schelling-example")
 
-It is easy to see that in our city, analogously to ant colonies, a global order emerges from interactions that consider only local criteria. In the terminology of complex systems, these phenomena are said to exhibit *emergent properties*, which have not been directly incorporated within the design of the system but they have been an indirect result of their functioning - throughout a process of *self-organization*.
+It is easy to see that in our city, analogously to ant colonies, a global order emerges from interactions that consider only local criteria. In the terminology of complex systems, these phenomena are said to exhibit *emergent properties*, which have not been directly incorporated within the design of the system but they have been an indirect result of their functioning - through a process of *self-organization*.
 
-While Schelling's model might be excessively simple and restricted to pedagogical purposes, contemporary cities also exhibit clear examples of self-organization and emerging order. A noteworthy example is the urban sprawl that we can observe in many Western cities, with Los Angeles, Atlanta or Houston as  archetypal examples. The term urban sprawl has often been associated to pejorative connotations of disorganization and lack of planning.
+While Schelling's model might be excessively simple and restricted to pedagogical purposes, contemporary cities also exhibit clear characteristics of self-organization and emerging order. A noteworthy example is the urban sprawl that we can observe in many Western cities, with Los Angeles, Atlanta or Houston as  archetypal examples. The term urban sprawl has often been associated to pejorative connotations of disorganization and lack of planning.
 
 ![Example of urban sprawl](/assets/images/complexity_society/urban-sprawl.jpg "Image from https://www.fastcompany.com/3028661/urban-sprawl-get-fat-stay-poor-and-die-in-car-crashes")
 
