@@ -65,4 +65,8 @@ layout: default
     {% include disqus.html %}
 {% endif %}
 
+{% if page.mathjax %}
+    {% include mathjax.html %}
+{% endif %}
+
 {% include footer.html %}
