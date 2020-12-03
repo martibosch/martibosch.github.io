@@ -1,9 +1,9 @@
 # main text of home
 name: Martí Bosch
-bio: Urban sprawl, Python and complexity
+bio: Urban sprawl, Python, and a bit of landscape ecology and complexity
 
 # twitter summary info
-description: Urban sprawl, Python and complexity
+description: Urban sprawl, Python, and a bit of landscape ecology and complexity
 
 # if it's an external image, update below for true
 # better with square images
@@ -50,7 +50,7 @@ github: martibosch
 authors:
     martibosch:
         name: Martí Bosch
-        bio: Urban sprawl, Python and complexity
+        bio: Urban sprawl, Python, and a bit of landscape ecology and complexity
         external-image: false
         picture: assets/images/profile.jpg
         twitter: mortybosch
