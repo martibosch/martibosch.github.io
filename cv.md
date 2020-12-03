@@ -4,7 +4,7 @@ layout:    static-page
 permalink: /cv/
 ---
 
-You can also download [a pdf version of my CV (as of 27/07/2020)](https://github.com/martibosch/martibosch.github.io/raw/master/assets/cv.pdf).
+You can also download [a pdf version of my CV (as of 03/12/2020)](https://github.com/martibosch/martibosch.github.io/raw/master/assets/cv.pdf).
 
 ## Education
 
