@@ -1,6 +1,6 @@
 ---
-title:     CV
-layout:    static-page
+title: CV
+layout: static-page
 permalink: /cv/
 ---
 
@@ -8,21 +8,21 @@ You can also download [a pdf version of my CV (as of 03/12/2020)](https://github
 
 ## Education
 
-**PhD in Civil and Environmental Engineering**, [École Polytechnique Fédérale de Lausanne](https://www.epfl.ch) - *(current)*
+**PhD in Civil and Environmental Engineering**, [École Polytechnique Fédérale de Lausanne](https://www.epfl.ch) - _(current)_
 
-**MSc in Informatics**, [École Nationale Supérieure d'Informatique et Mathématiques Appliquées de Grenoble](http://ensimag.grenoble-inp.fr) - *2016*
+**MSc in Informatics**, [École Nationale Supérieure d'Informatique et Mathématiques Appliquées de Grenoble](http://ensimag.grenoble-inp.fr) - _2016_
 
-**BSc in Industrial Technology Engineering**, [Escola Tècnica Superior d'Enginyeria Industrial de Barcelona](https://www.etseib.upc.edu) - *2014*
+**BSc in Industrial Technology Engineering**, [Escola Tècnica Superior d'Enginyeria Industrial de Barcelona](https://www.etseib.upc.edu) - _2014_
 
 ## Experience
 
-**Doctoral Assistant**, [Urban and regional planning community (CEAT)](http://ceat.epfl.ch/), EPFL, Lausanne, Switzerland - *(current)*
+**Doctoral Assistant**, [Urban and regional planning community (CEAT)](http://ceat.epfl.ch/), EPFL, Lausanne, Switzerland - _(current)_
 
-**Research Intern**, [STEEP team](https://team.inria.fr/steep/), INRIA Rhone-Alpes, Grenoble, France - *Feb to Jul 2016*
+**Research Intern**, [STEEP team](https://team.inria.fr/steep/), INRIA Rhone-Alpes, Grenoble, France - _Feb to Jul 2016_
 
-**Summer Student**, [IT department](http://information-technology.web.cern.ch/), CERN, Geneva, Switzerland - *Jun to Sep 2015*
+**Summer Student**, [IT department](http://information-technology.web.cern.ch/), CERN, Geneva, Switzerland - _Jun to Sep 2015_
 
-**Research Intern**, [Tyrex team](https://tyrex.inria.fr/), INRIA Rhone-Alpes, Grenoble, France - *Feb to Jul 2014*
+**Research Intern**, [Tyrex team](https://tyrex.inria.fr/), INRIA Rhone-Alpes, Grenoble, France - _Feb to Jul 2014_
 
 ## Publications
 

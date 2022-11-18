@@ -1,11 +1,11 @@
 ---
-layout:   post
+layout: post
 comments: true
-title:    "Urban footprinter: a repeatable convolution-based approach to extract urban extents from land use/land cover rasters"
-author:   martibosch
-date:     2019-10-21
+title: "Urban footprinter: a repeatable convolution-based approach to extract urban extents from land use/land cover rasters"
+author: martibosch
+date: 2019-10-21
 category: blog
-tags: python urban-areas geospatial computer-vision 
+tags: python urban-areas geospatial computer-vision
 headnote: This post is a description of the <a href="https://github.com/martibosch/urban-footprinter">urban-footprinter</a> package, derived from its <a href="https://github.com/martibosch/urban-footprinter/blob/master/notebooks/overview.ipynb">overview notebook</a>, which can be executed interactively in your browser via myBinder by following <a href="https://mybinder.org/v2/gh/martibosch/urban-footprinter/master?filepath=notebooks/overview.ipynb">this link</a>.
 ---
 
@@ -30,7 +30,7 @@ raster_filepath = 'data/zurich.tif'
 with rio.open(raster_filepath) as src:
     lulc_arr = src.read(1)
     res = src.res[0]  # only square pixels are supported
-    
+
     # custom colormap to plot the raster
     # https://matplotlib.org/3.1.1/tutorials/colors/colormap-manipulation.html
     num_classes = len(np.unique(lulc_arr))
@@ -40,7 +40,7 @@ with rio.open(raster_filepath) as src:
     color_values[13, :] = blue  # water
     color_values[14, :] = blue  # water
     cmap = colors.ListedColormap(color_values)
-    
+
     # np.where is used because nodata values of 255 would distort the colormap
     plt.imshow(np.where(lulc_arr != 255, lulc_arr, -1), cmap=cmap)
     plt.colorbar()
@@ -63,10 +63,9 @@ plt.imshow(urban_lulc_arr)
 
 The approach of the urban footprinter library is built upon the methods used in the "Atlas of Urban Expansion" by Angel et al. [3]. The main idea is that a pixel is considered part of the urban extent depending on the proportion of built-up pixels that surround it. Accordingly, the extraction of the urban extent can be customized by means of the following three parameters:
 
-* `kernel_radius`: radius (in meters) of the circular kernel used in the convolution
-* `urban_threshold`: proportion of neighboring (within the kernel) urban pixels after which a given pixel is considered urban
-* `buffer_dist` (optional): buffer distance (in meters) to add around the computed mask
-
+- `kernel_radius`: radius (in meters) of the circular kernel used in the convolution
+- `urban_threshold`: proportion of neighboring (within the kernel) urban pixels after which a given pixel is considered urban
+- `buffer_dist` (optional): buffer distance (in meters) to add around the computed mask
 
 ### Convolution with a circular kernel
 
@@ -111,7 +110,6 @@ plt.colorbar()
 
 ![png](/assets/images/urban_footprinter/convolution-result.png)
 
-
 ### Filtering the convolution results
 
 The result of the convolution is then used to classify pixels that are part of the urban extent. To this end, the `urban_threshold` parameter sets the proportion of surrounding built-up pixels after which a pixel is to be considered part of the urban extent. In this example, it will be set to 0.25 (i.e., 25%).
@@ -129,7 +127,6 @@ plt.imshow(urban_mask)
 ```
 
 ![png](/assets/images/urban_footprinter/convolution-threshold.png)
-
 
 ### Optional: extract only the largest urban cluster
 
@@ -149,7 +146,6 @@ plt.imshow(urban_mask)
 ```
 
 ![png](/assets/images/urban_footprinter/largest-urban-cluster.png)
-
 
 ### Optional: adding a buffer around the mask
 
@@ -172,7 +168,6 @@ plt.imshow(urban_mask)
 
 ![png](/assets/images/urban_footprinter/urban-mask-buffered.png)
 
-
 ## The urban footprinter API
 
 In the urban footprinter package, the procedure described above is encapsulated into a single function named `urban_footprint_mask`, which accepts the following arguments:
@@ -180,10 +175,10 @@ In the urban footprinter package, the procedure described above is encapsulated 
     help(ufp.urban_footprint_mask)
 
     Help on function urban_footprint_mask in module urban_footprinter:
-    
+
     urban_footprint_mask(raster, kernel_radius, urban_threshold, urban_classes=None, largest_patch_only=True, buffer_dist=None, res=None)
         Computes a boolean mask of the urban footprint of a given raster.
-        
+
         Parameters
         ----------
         raster : ndarray or str, file object or pathlib.Path object
@@ -208,11 +203,11 @@ In the urban footprinter package, the procedure described above is encapsulated 
         res : numeric, optional
             Resolution of the `raster` (assumes square pixels). Ignored if `raster`
             is a path to a geotiff.
-        
+
         Returns
         -------
         urban_mask : ndarray
-    
+
 ```python
 kernel_radius = 500
 urban_threshold = 0.25
@@ -244,7 +239,6 @@ urban_mask
 ```
 
 ![svg](/assets/images/urban_footprinter/urban-mask-ufp.svg)
-
 
 ## References
 

@@ -1,24 +1,27 @@
-{% if page.title == "Home" %}{% assign showHeader = true %}{% endif %}
-
+{% if page.title == "Home" %}
+    {% assign showHeader = true %}
+{% endif %}
 {% if showHeader == true %}
     <header class="header-home {% if site.animation %}animated{% endif %}">
         {% if site.about %}
             <a class="link" href="{{ site.url }}/about">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.profile-picture }}{% else %}{{ site.url }}/{{ site.profile-picture }}{% endif %}" />
+                <img class="selfie"
+                     alt="{{ site.name }}"
+                     src="{% if site.external-image %}{{ site.profile-picture }}{% else %}{{ site.url }}/{{ site.profile-picture }}{% endif %}"/>
             </a>
         {% else %}
             <span class="link">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.profile-picture }}{% else %}{{ site.url }}/{{ site.profile-picture }}{% endif %}" />
+                <img class="selfie"
+                     alt="{{ site.name }}"
+                     src="{% if site.external-image %}{{ site.profile-picture }}{% else %}{{ site.url }}/{{ site.profile-picture }}{% endif %}"/>
             </span>
         {% endif %}
-
         <h1 class="title">{{ site.name }}</h1>
         <h2 class="description">{{ site.bio }}</h2>
     </header>
 {% else %}
     {% unless page.tags %}
-        <h1>{{ page.title }}</h1>
-    {% endunless %}
+    <h1>{{ page.title }}</h1>
+{% endunless %}
 {% endif %}
-
 {% include nav.html %}

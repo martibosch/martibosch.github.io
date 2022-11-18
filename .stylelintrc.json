@@ -1,0 +1,11 @@
+{
+  "plugins": ["stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true,
+    "rule-empty-line-before": [
+      "always",
+      { "ignore": ["after-comment", "first-nested"] }
+    ]
+  },
+  "extends": ["stylelint-config-prettier"]
+}

@@ -48,12 +48,12 @@ github: martibosch
 # email: myemail@gmail.com
 
 authors:
-    martibosch:
-        name: Martí Bosch
-        bio: Urban sprawl, Python, and a bit of landscape ecology and complexity
-        external-image: false
-        picture: assets/images/profile.jpg
-        twitter: mortybosch
+  martibosch:
+    name: Martí Bosch
+    bio: Urban sprawl, Python, and a bit of landscape ecology and complexity
+    external-image: false
+    picture: assets/images/profile.jpg
+    twitter: mortybosch
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -101,4 +101,4 @@ plugins:
   - jekyll-admin
 
 jekyll-mentions:
-    base_url: https://github.com
+  base_url: https://github.com

@@ -1,12 +1,12 @@
 ---
-layout:      post
-comments:    true
-mathjax:     true
-title:       "On spatial joins between networks and polygon geometries in Python"
-author:      martibosch
-date:        2020-05-19
-category:    blog
-tags:        python networks geospatial openstreetmap geopandas networkx osmnx
+layout: post
+comments: true
+mathjax: true
+title: "On spatial joins between networks and polygon geometries in Python"
+author: martibosch
+date: 2020-05-19
+category: blog
+tags: python networks geospatial openstreetmap geopandas networkx osmnx
 headnote: A Jupyter notebook with the whole code materials used is available at <a href="https://github.com/martibosch/martibosch.github.io/blob/master/assets/notebooks/network_spatial_joins.ipynb">martibosch.github.io/blob/master/assets/notebooks/network_spatial_joins.ipynb</a>
 ---
 
@@ -36,6 +36,7 @@ trip_gdf.head()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -95,7 +96,6 @@ trip_gdf.head()
 
 Let us then use [OSMnx](https://github.com/gboeing/osmnx) to get the street network ot the area:
 
-
 ```python
 # get convex hull in lat/long to query OSM
 convex_hull = trip_gdf['dest'].unary_union.convex_hull
@@ -106,7 +106,6 @@ G = ox.project_graph(G.to_undirected(reciprocal=False))
 ```
 
 We obtain a network of 4032 nodes and 5344 edges which looks as follows:
-
 
 ```python
 fig, ax = ox.plot_graph(G)
@@ -148,7 +147,7 @@ def get_buffer_street_length(point, buffer_dist, G):
         return 0
 ```
 
-which we can then call by providing the `point` variable defined above, i.e., the location of the destination of the first trip, a buffer distance of 100 m, and the *projected* street network `G` as in:
+which we can then call by providing the `point` variable defined above, i.e., the location of the destination of the first trip, a buffer distance of 100 m, and the _projected_ street network `G` as in:
 
 ```python
 street_length = get_buffer_street_length(point, 100, G)
@@ -156,16 +155,14 @@ street_length = get_buffer_street_length(point, 100, G)
 
 Nevertheless, the such call takes 19.4 s in my Lenovo X1C6 laptop, which is clearly too slow considering that we need to perform such computation for each of the 8943 trips.
 
-
-## First step: spatial join 
+## First step: spatial join
 
 There are two main issues that we need to address regarding the performance of our code.
 
-* **Asymptotic complexity**: for each of our K trips, we need to test which of the N nodes fall within the 100 m radius of the destination location. A brute force algorithm would require $\mathcal{O}(K \cdot N)$. In order to improve that, we can use a tree-based spatial indexing such as an [R-tree](https://en.wikipedia.org/wiki/R-tree). [This post by Geoff Boeing](https://geoffboeing.com/2016/10/r-tree-spatial-index-python/) uses Python and GeoPandas to provide a nice overview of its advantages. Making use of such techniques can improve the asymptotic complexity to $\mathcal{O}((K + N) \cdot log(K) + f)$, where f is the number of interesections between minimum bounding rectangles found[^spatial-join-techniques]. Long story short, such gain becomes key when we deal with large datasets.
-* **Dynamic typing and interpreted execution in Python**: Python is an interpreted language which is prone to significant execution overheads because of its dynamic type-checking. In short, this means that [you should avoid iterating over large arrays and instead operate with NumPy typed arrays with *ufuncs*, aggregates (e.g., `np.mean`, `np.max`, ...), slicing, masking and the like](https://nbviewer.jupyter.org/github/jakevdp/2013_fall_ASTR599/blob/master/notebooks/11_EfficientNumpy.ipynb).
+- **Asymptotic complexity**: for each of our K trips, we need to test which of the N nodes fall within the 100 m radius of the destination location. A brute force algorithm would require $\mathcal{O}(K \cdot N)$. In order to improve that, we can use a tree-based spatial indexing such as an [R-tree](https://en.wikipedia.org/wiki/R-tree). [This post by Geoff Boeing](https://geoffboeing.com/2016/10/r-tree-spatial-index-python/) uses Python and GeoPandas to provide a nice overview of its advantages. Making use of such techniques can improve the asymptotic complexity to $\mathcal{O}((K + N) \cdot log(K) + f)$, where f is the number of interesections between minimum bounding rectangles found[^spatial-join-techniques]. Long story short, such gain becomes key when we deal with large datasets.
+- **Dynamic typing and interpreted execution in Python**: Python is an interpreted language which is prone to significant execution overheads because of its dynamic type-checking. In short, this means that [you should avoid iterating over large arrays and instead operate with NumPy typed arrays with _ufuncs_, aggregates (e.g., `np.mean`, `np.max`, ...), slicing, masking and the like](https://nbviewer.jupyter.org/github/jakevdp/2013_fall_ASTR599/blob/master/notebooks/11_EfficientNumpy.ipynb).
 
 In Python, both issues can be addressed by making use of the spatial join operation of GeoPandas[^geopandas]. To that end, we need to prepare two geo-data frames, i.e., a first one where the destination points of each trip are transformed into polygon geometries representing the circular buffers with a 100 m radius, and a second one with the point geometries of each node of the street network:
-
 
 ```python
 # left geo-data frame
@@ -221,6 +218,7 @@ group_gdf
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -264,7 +262,7 @@ Note that the index and `geometry` column are the same since they correspond to 
 
 ## Compute the street length with group by and apply
 
-Given the result of the spatial join, we can use the [`G.subgraph` method of NetworkX](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.Graph.subgraph.html) to get the subgraph that corresponds to the set of nodes  each `group_gdf`, i.e.:
+Given the result of the spatial join, we can use the [`G.subgraph` method of NetworkX](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.Graph.subgraph.html) to get the subgraph that corresponds to the set of nodes each `group_gdf`, i.e.:
 
 ```python
 G.subgraph(group_gdf['node'])
@@ -306,10 +304,9 @@ _ = trips_df['street_length'].hist()
 
 ![png](/assets/images/network_spatial_joins/street-length-subgraph.png)
 
-
 ## Going one step further: including incomplete street segments
 
-Although the computational workflow described above has provided us with a distribution of street lenghts in satisfactory time, it has a key conceptual shortcoming. Let us illustrate it by plotting the subgraph that correspond `group_gdf` used above: 
+Although the computational workflow described above has provided us with a distribution of street lenghts in satisfactory time, it has a key conceptual shortcoming. Let us illustrate it by plotting the subgraph that correspond `group_gdf` used above:
 
 ```python
 fig, ax = ox.plot_graph(G.subgraph(group_gdf['node']),
@@ -359,8 +356,8 @@ def get_graph_in_geom(geom, nodes, G):
                 node_in_id, node_out_id = node_u['osmid'], node_v['osmid']
                 p_in, p_out = p_u, p_v
         else:
-            # since the argument `nodes` (that we pass to `subgraph` 
-            # above) comes from the spatial join we know that at least one 
+            # since the argument `nodes` (that we pass to `subgraph`
+            # above) comes from the spatial join we know that at least one
             # node is inside `geom`
             # `v` is inside `geom` but `u` is outside
             node_in_id, node_out_id = node_v['osmid'], node_u['osmid']
@@ -439,12 +436,11 @@ As noted in the left plot, the distribution of street lengths when considering t
 
 ## On further performance improvements
 
-The 26 s required to include the incomplete street segments in our spatial join is significantly slower than the 2.66 seconds required when ommiting them. Nonetheless, there is still room for many performance improvements. Firstly, the group by for loop where we call `get_graph_in_geom` is *embarrassingly parallel*, and therefore [can easily be performed at scale with Dask](https://examples.dask.org/applications/embarrassingly-parallel.html). Secondly, [NetworkX is a rather slow library to model networks when compared to other Python alternatives such as graph-tool or igraph](https://graph-tool.skewed.de/performance). Thirdly, the geometric operations that we perform with shapely (i.e., interception of the red edges and the boundaries of the buffer geometries) are relatively simple and could be implemented with NumPy to avoid overheads. Finally, there exists a set of libraries that allow us to compile our Python code into faster machine languages and significantly improve the execution speeds [e.g., Cython, Numba, Pythran...](https://flothesof.github.io/optimizing-python-code-numpy-cython-pythran-numba.html)
+The 26 s required to include the incomplete street segments in our spatial join is significantly slower than the 2.66 seconds required when ommiting them. Nonetheless, there is still room for many performance improvements. Firstly, the group by for loop where we call `get_graph_in_geom` is _embarrassingly parallel_, and therefore [can easily be performed at scale with Dask](https://examples.dask.org/applications/embarrassingly-parallel.html). Secondly, [NetworkX is a rather slow library to model networks when compared to other Python alternatives such as graph-tool or igraph](https://graph-tool.skewed.de/performance). Thirdly, the geometric operations that we perform with shapely (i.e., interception of the red edges and the boundaries of the buffer geometries) are relatively simple and could be implemented with NumPy to avoid overheads. Finally, there exists a set of libraries that allow us to compile our Python code into faster machine languages and significantly improve the execution speeds [e.g., Cython, Numba, Pythran...](https://flothesof.github.io/optimizing-python-code-numpy-cython-pythran-numba.html)
 
 I might at some point amend this blog post with the implementation of some of the ideas listed above. In the meantime, the proposed approach allows us to comfortably operate on networks of some thousand nodes in a laptop.
 
 ## Notes
 
 [^spatial-join-techniques]: See Jacox, E. H., & Samet, H. (2007). Spatial join techniques. ACM Transactions on Database Systems (TODS), 32(1), 7-es.
-
 [^geopandas]: Actually, some geometry operations in GeoPandas used to be slow because the geometry elements were stored as a generic `object`-dtype column with Shapely objects. To improve that, an [initial idea by Joris Van den Bossche](https://jorisvandenbossche.github.io/blog/2017/09/19/geopandas-cython/) consisted in changing the `object`-dtype gometry column for a NumPy array of pointers to GEOS objects. It seems that [such an approach has been put aside and the GeoPandas developers](https://github.com/geopandas/geopandas/issues/473#issuecomment-610040595) in favor of [making use of the spatial operations from the PyGEOS package](https://geopandas.readthedocs.io/en/latest/install.html#using-the-optional-pygeos-dependency), although the latter is still experimental. In any case, the spatial join of GeoPandas employed in this article [was already Cythonized by Matthew Rocklin in August 2017](https://github.com/geopandas/geopandas/pull/475), so I do not know whether preformance improvements are to be expected in such operation.
