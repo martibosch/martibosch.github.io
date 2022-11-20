@@ -6,17 +6,17 @@
         {% if site.about %}
             <a class="link" href="{{ site.url }}/about">
                 <img class="selfie"
-                     alt="{{ site.name }}"
+                     alt="{{ site.title }}"
                      src="{% if site.external-image %}{{ site.profile-picture }}{% else %}{{ site.url }}/{{ site.profile-picture }}{% endif %}"/>
             </a>
         {% else %}
             <span class="link">
                 <img class="selfie"
-                     alt="{{ site.name }}"
+                     alt="{{ site.title }}"
                      src="{% if site.external-image %}{{ site.profile-picture }}{% else %}{{ site.url }}/{{ site.profile-picture }}{% endif %}"/>
             </span>
         {% endif %}
-        <h1 class="title">{{ site.name }}</h1>
+        <h1 class="title">{{ site.title }}</h1>
         <h2 class="description">{{ site.bio }}</h2>
     </header>
 {% else %}
