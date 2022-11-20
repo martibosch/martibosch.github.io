@@ -9,6 +9,16 @@
             <i class="fa-brands fa-facebook"></i>
         </a>
     {% endif %}
+    {% if site.mastodon %}
+        <a class="link"
+           data-title="{{ site.mastodon }}"
+           href="https://{{ site.mastodon }}"
+           target="_blank"
+           rel="me"
+           href="https://{{ site.mastodon }}">
+            <i class="fa-brands fa-mastodon"></i>
+        </a>
+    {% endif %}
     {% if site.twitter %}
         <a class="link"
            data-title="twitter.com/{{ site.twitter }}"
