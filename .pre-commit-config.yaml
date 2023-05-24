@@ -18,7 +18,7 @@ repos:
     rev: v2.7.1
     hooks:
       - id: prettier
-        exclude_types: [html]
+        exclude_types: [html, markdown]
         additional_dependencies:
           - prettier@2.7.1
           - "@shopify/prettier-plugin-liquid"
