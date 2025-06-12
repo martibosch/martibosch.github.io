@@ -95,11 +95,10 @@ show-author: true
 animation: true
 
 plugins:
-  - jekyll-seo-tag
-  - jekyll-gist
   - jekyll-feed
+  - jekyll-gist
+  - jekyll-seo-tag
   - jemoji
-  - jekyll-admin
 
 jekyll-mentions:
   base_url: https://github.com
