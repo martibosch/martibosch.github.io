@@ -29,12 +29,13 @@ disqus:
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
+bluesky: martibosch.bsky.social
 mastodon: fosstodon.org/@martibosch
 twitter: mortybosch
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: mypinterest
-# linkedin: mylinkedin
+linkedin: martibosch
 # youtube: myyoutube
 # spotify: myspotify
 github: martibosch
