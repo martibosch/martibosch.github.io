@@ -21,13 +21,25 @@ layout: compress
               type="application/rss+xml"
               title="{{ site.title }}"
               href="{{ site.url }}{{ "/feed.xml" }}"/>
-        <script src="https://kit.fontawesome.com/d9b09040a7.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700'
               rel='stylesheet'
               type='text/css'>
         {% comment %} djlint:on {% endcomment %}
         <style>
-         {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
+         {% if site.dark-theme == "auto" %}
+             {% capture scss_sheet %}
+                 {% include style.scss %}
+                 @media (prefers-color-scheme: dark) {
+                     {% include style-dark.scss %}
+                 }
+             {% endcapture %}
+         {% elsif site.dark-theme %}
+             {% capture scss_sheet %}{% include style-dark.scss %}{% endcapture %}
+         {% else %}
+             {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
+         {% endif %}
          {{ scss_sheet | scssify }}
          {% if page.category == 'fait-a-sant-feliu' %}
          {% capture fsf_sheet %}{% include fait-a-sant-feliu.scss %}{% endcapture %}

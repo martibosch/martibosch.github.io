@@ -1,15 +1,101 @@
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11.14.0/dist/mermaid.min.js"></script>
 <script>
+ var darkTheme = {% if site.dark-theme == "auto" %}
+     window.matchMedia('(prefers-color-scheme: dark)').matches
+ {% elsif site.dark-theme %}
+     true
+ {% else %}
+     false
+ {% endif %};
+ var diagramColors = darkTheme ? {
+     '$NODE_TEXT':        '#f8fafc',
+     '$TASK_FILL':        '#1a3a5c',
+     '$TASK_STROKE':      '#8ab4f8',
+     '$DATA_FILL':        '#1f2937',
+     '$DATA_STROKE':      '#9ca3af',
+     '$GPU_FILL':         '#2b2118',
+     '$GPU_STROKE':       '#f59e0b',
+     '$TARGET_FILL':      '#111827',
+     '$TARGET_STROKE':    '#6b7280',
+     '$SUB_TASK_FILL':    '#0d1e35',
+     '$SUB_TASK_STROKE':  '#8ab4f8',
+     '$SUB_LOOP_FILL':    '#0d1e35',
+     '$SUB_NEUTRAL_FILL': '#111827',
+     '$SUB_NEUTRAL_STROKE':'#6b7280',
+     '$SUB_GPU_FILL':     '#2b1a0e',
+     '$SUB_GPU_STROKE':   '#f59e0b'
+ } : {
+     '$NODE_TEXT':        '#1f2937',
+     '$TASK_FILL':        '#ecf4ff',
+     '$TASK_STROKE':      '#4f7dcf',
+     '$DATA_FILL':        '#eef2f7',
+     '$DATA_STROKE':      '#687385',
+     '$GPU_FILL':         '#ffe2d6',
+     '$GPU_STROKE':       '#e4572e',
+     '$TARGET_FILL':      '#f2f2f2',
+     '$TARGET_STROKE':    '#777',
+     '$SUB_TASK_FILL':    '#f7fbff',
+     '$SUB_TASK_STROKE':  '#4f7dcf',
+     '$SUB_LOOP_FILL':    '#eaf3ff',
+     '$SUB_NEUTRAL_FILL': '#fafafa',
+     '$SUB_NEUTRAL_STROKE':'#777',
+     '$SUB_GPU_FILL':     '#fff1e8',
+     '$SUB_GPU_STROKE':   '#e4572e'
+ };
+ function resolveColors(text) {
+     return Object.keys(diagramColors).reduce(function(t, k) {
+         return t.split(k).join(diagramColors[k]);
+     }, text);
+ }
  var config = {
      startOnLoad:false,
-     theme: 'forest'
+     theme: 'base',
+     themeVariables: darkTheme ? {
+         background: '#000',
+         primaryColor: '#1f2937',
+         primaryBorderColor: '#8ab4f8',
+         primaryTextColor: '#f8fafc',
+         secondaryColor: '#111827',
+         secondaryBorderColor: '#9ca3af',
+         secondaryTextColor: '#f8fafc',
+         tertiaryColor: '#2b2118',
+         tertiaryBorderColor: '#f59e0b',
+         tertiaryTextColor: '#f8fafc',
+         lineColor: '#d1d5db',
+         textColor: '#f8fafc',
+         edgeLabelBackground: '#000',
+         clusterBkg: '#111827',
+         clusterBorder: '#9ca3af',
+         titleColor: '#f8fafc',
+         labelTextColor: '#f8fafc',
+         nodeTextColor: '#f8fafc'
+     } : {
+         background: '#fff',
+         primaryColor: '#eef4ff',
+         primaryBorderColor: '#3867b7',
+         primaryTextColor: '#172033',
+         secondaryColor: '#f6f8fb',
+         secondaryBorderColor: '#687385',
+         secondaryTextColor: '#172033',
+         tertiaryColor: '#fff3eb',
+         tertiaryBorderColor: '#d9480f',
+         tertiaryTextColor: '#172033',
+         lineColor: '#4b5563',
+         textColor: '#172033',
+         edgeLabelBackground: '#fff',
+         clusterBkg: '#f8fafc',
+         clusterBorder: '#687385',
+         titleColor: '#172033',
+         labelTextColor: '#172033',
+         nodeTextColor: '#172033'
+     }
  };
  mermaid.initialize(config);
  window.addEventListener('load', function() {
      document.querySelectorAll('pre > code.language-mermaid').forEach(function(codeBlock) {
          var diagram = document.createElement('div');
          diagram.className = 'mermaid';
-         diagram.textContent = codeBlock.textContent;
+         diagram.textContent = resolveColors(codeBlock.textContent);
          codeBlock.parentNode.replaceWith(diagram);
      });
      mermaid.run({ querySelector: '.mermaid' });

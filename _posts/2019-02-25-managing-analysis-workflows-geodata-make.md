@@ -63,6 +63,10 @@ MAKEEXTRACT --> URBANEXTRACT[Urban extract tif]
 end
 URBANEXTRACT -.-> MAKEFIGURE(Make figure)
 MAKEFIGURE --> FIGURE[Figure png]
+classDef task fill:$TASK_FILL,stroke:$TASK_STROKE,color:$NODE_TEXT;
+classDef data fill:$DATA_FILL,stroke:$DATA_STROKE,color:$NODE_TEXT;
+class DOWNGMB,DOWNCLC,MAKEEXTRACT,MAKEFIGURE task;
+class GMB,CLC,URBANEXTRACT,FIGURE data;
 ```
 
 The nodes with rounded corners represent tasks, whereas the ones with sharp corners represent data states (for instance, interim files). The dashed links towards the highlighted part denote that there should not be a single _make extract_ and _urban extract_ pair of nodes but a pair for each urban agglomeration and for each year. Since we consider the 3 largest Swiss urban agglomerations (Zurich, Geneva and Basel) for the four years 2000, 2006 and 2012, we will generate a total of 9 urban extracts, which will then be all used in order to produce the final figure.

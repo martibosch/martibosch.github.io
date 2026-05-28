@@ -136,15 +136,15 @@ flowchart TB
     val_forecasts --> evaluate --> score --> all_target
     test_forecasts --> test_target
 
-    classDef data fill:#eef2f7,stroke:#687385,color:#1f2937;
-    classDef task fill:#ecf4ff,stroke:#4f7dcf,color:#1f2937;
-    classDef gpu fill:#ffe2d6,stroke:#e4572e,stroke-width:2px,color:#1f2937;
-    classDef target fill:#f2f2f2,stroke:#777,color:#1f2937;
+    classDef data fill:$DATA_FILL,stroke:$DATA_STROKE,color:$NODE_TEXT;
+    classDef task fill:$TASK_FILL,stroke:$TASK_STROKE,color:$NODE_TEXT;
+    classDef gpu fill:$GPU_FILL,stroke:$GPU_STROKE,stroke-width:2px,color:$NODE_TEXT;
+    classDef target fill:$TARGET_FILL,stroke:$TARGET_STROKE,color:$NODE_TEXT;
     class data_ready,ckpt,val_forecasts,test_forecasts,score,norm_stats data;
     class train,forecast_val,forecast_test gpu;
     class download_data,evaluate,compute_norm task;
     class all_target,test_target target;
-    style forecasts fill:#fff8f3,stroke:#e4572e,stroke-width:2px
+    style forecasts fill:$SUB_GPU_FILL,stroke:$SUB_GPU_STROKE,stroke-width:2px
 ```
 
 ## Interlude: our submission
@@ -207,16 +207,16 @@ flowchart TB
     local_refine --> local_push
     github_repo --> brev_update --> brev_rerun --> brev_inspect
 
-    classDef local fill:#ecf4ff,stroke:#4f7dcf,color:#1f2937;
-    classDef github fill:#f2f2f2,stroke:#777,color:#1f2937;
-    classDef gpu fill:#ffe2d6,stroke:#e4572e,stroke-width:2px,color:#1f2937;
+    classDef local fill:$TASK_FILL,stroke:$TASK_STROKE,color:$NODE_TEXT;
+    classDef github fill:$TARGET_FILL,stroke:$TARGET_STROKE,color:$NODE_TEXT;
+    classDef gpu fill:$GPU_FILL,stroke:$GPU_STROKE,stroke-width:2px,color:$NODE_TEXT;
     class local_edit,local_push,local_refine local;
     class github_repo github;
     class brev_pull,brev_run,brev_inspect,brev_update,brev_rerun gpu;
-    style Local fill:#f7fbff,stroke:#4f7dcf
-    style GitHub fill:#fafafa,stroke:#777
-    style Brev fill:#fff1e8,stroke:#e4572e,stroke-width:3px
-    style BrevLoop fill:#fff1e8,stroke:#e4572e,stroke-width:2px
+    style Local fill:$SUB_TASK_FILL,stroke:$SUB_TASK_STROKE
+    style GitHub fill:$SUB_NEUTRAL_FILL,stroke:$SUB_NEUTRAL_STROKE
+    style Brev fill:$SUB_GPU_FILL,stroke:$SUB_GPU_STROKE,stroke-width:3px
+    style BrevLoop fill:$SUB_GPU_FILL,stroke:$SUB_GPU_STROKE,stroke-width:2px
 ```
 
 The positive part of this set up is that all changes need to go through git, which can enforce good practices by means of pre-commit hooks and potentially continuous integration (CI). The bad part is that the GPU was idle most of the time. In fact, after setting up the Brev instance on the first day of the hackathon, my colleague and I went for lunch and realized that about $2 of credits were gone becuse we simply did not "Stop" the Brev deployment.
@@ -252,16 +252,16 @@ flowchart TB
     gpu_run -->|"logs and artifacts"| local_inspect
     local_inspect --> local_refine --> local_push
 
-    classDef local fill:#ecf4ff,stroke:#4f7dcf,color:#1f2937;
-    classDef github fill:#f2f2f2,stroke:#777,color:#1f2937;
-    classDef gpu fill:#ffe2d6,stroke:#e4572e,stroke-width:2px,color:#1f2937;
+    classDef local fill:$TASK_FILL,stroke:$TASK_STROKE,color:$NODE_TEXT;
+    classDef github fill:$TARGET_FILL,stroke:$TARGET_STROKE,color:$NODE_TEXT;
+    classDef gpu fill:$GPU_FILL,stroke:$GPU_STROKE,stroke-width:2px,color:$NODE_TEXT;
     class local_edit,local_push,local_submit,local_inspect,local_refine local;
     class github_repo github;
     class gpu_run gpu;
-    style Local fill:#f7fbff,stroke:#4f7dcf
-    style GitHub fill:#fafafa,stroke:#777
-    style GPU fill:#fff1e8,stroke:#e4572e,stroke-width:3px
-    style LocalLoop fill:#eaf3ff,stroke:#4f7dcf,stroke-width:2px
+    style Local fill:$SUB_TASK_FILL,stroke:$SUB_TASK_STROKE
+    style GitHub fill:$SUB_NEUTRAL_FILL,stroke:$SUB_NEUTRAL_STROKE
+    style GPU fill:$SUB_GPU_FILL,stroke:$SUB_GPU_STROKE,stroke-width:3px
+    style LocalLoop fill:$SUB_LOOP_FILL,stroke:$SUB_TASK_STROKE,stroke-width:2px
 ```
 
 I may explore a [Modal](https://modal.com) version of this set up soon to verify whether it is another good case for serverless computing.
