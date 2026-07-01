@@ -1,6 +1,6 @@
 # main text of home
 title: Martí Bosch
-bio: &bio Urban climate, Python, and a bit of landscape ecology and complexity
+bio: &bio AI weather models, urban climate, Python and a bit of landscape ecology
 
 # twitter summary info
 description: *bio
