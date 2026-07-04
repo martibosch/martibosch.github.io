@@ -15,10 +15,10 @@
                             </a>
                         </li>
                         {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-                        {% assign postHasSimilar = true %}
-                    {% endif %}
-                {% endfor %}
+                    {% assign postHasSimilar = true %}
+                {% endif %}
             {% endfor %}
         {% endfor %}
-        {% if hasSimilar.size > 0 %}</ul>{% endif %}
-    </div>
+    {% endfor %}
+    {% if hasSimilar.size > 0 %}</ul>{% endif %}
+</div>

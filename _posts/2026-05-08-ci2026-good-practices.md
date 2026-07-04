@@ -10,7 +10,7 @@ tags: python climate-informatics deep-learning torch snakemake pixi wandb
 headnote: A GitHub repository with the set up described in this post is available at <a href="https://github.com/martibosch/CI2026-StarterKit">github.com/martibosch/CI2026-StarterKit</a>
 ---
 
-I finally managed to "win" the [Climate informatics 26 Hackathon](https://tobifinn.github.io/ci_hackathon_26) on using deep learning to predict cloud cover. Too bad this happened only: 
+I finally managed to "win" the [Climate informatics 26 Hackathon](https://tobifinn.github.io/ci_hackathon_26) on using deep learning to predict cloud cover. Too bad this happened only:
 
 - one week after the final submission deadline,
 - after being able to see [the actual winning solution](https://github.com/radiradev/1st-place-solution-CI2026),
@@ -94,7 +94,7 @@ done
 python scripts/evaluate.py \
     --prediction_dir data/forecasts/baseline_mlp \
 	--to_json \
-	--output_path scores/baseline_mlp.json 
+	--output_path scores/baseline_mlp.json
 ```
 
 with a single call:
@@ -149,7 +149,7 @@ flowchart TB
 
 ## Interlude: our submission
 
-I am not going to develop much on our submitted network because we did not win. My colleague was right to suggest using a U-Net[^unet-claude], to which we added sphere-aware padding (circular along the longitude axis, replicate along latitude) and added relative humidity as a derived input feature computed on-the-fly in the forward pass alongside the raw pressure-level fields and two static auxiliary fields (land-sea mask and orography). The best results network were obtained with a wide configuration (96 base channels, 3 downsampling stages). 
+I am not going to develop much on our submitted network because we did not win. My colleague was right to suggest using a U-Net[^unet-claude], to which we added sphere-aware padding (circular along the longitude axis, replicate along latitude) and added relative humidity as a derived input feature computed on-the-fly in the forward pass alongside the raw pressure-level fields and two static auxiliary fields (land-sea mask and orography). The best results network were obtained with a wide configuration (96 base channels, 3 downsampling stages).
 
 From my experience in computer vision, I actually thought of including augmentation-like transforms to our training loop, but discarded it since I considered that these would disregard the semantics of the land-sea mask and orography. However, in retrospective, the most likely reason we fell short was actually including those static geographic fields. By seeing the land-sea mask and orography during training, the network learned to associate cloud patterns with specific landscape features of the training region rather than the underlying atmospheric dynamics, and those associations do not transfer to a held-out region with different geography.
 
