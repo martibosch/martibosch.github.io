@@ -10,12 +10,12 @@ repos:
       - id: check-yaml
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.16.4
+    rev: v4.16.5
     hooks:
       - id: commitizen
 
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.9.4
+    rev: v3.9.5
     hooks:
       - id: prettier
         exclude_types: [html, markdown]
@@ -24,14 +24,14 @@ repos:
           - "@shopify/prettier-plugin-liquid"
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v17.14.0
+    rev: v17.14.1
     hooks:
       - id: stylelint
         exclude_types: [sass]
         additional_dependencies: ["stylelint"]
 
   - repo: https://github.com/Riverside-Healthcare/djLint
-    rev: v1.40.2
+    rev: v1.42.1
     hooks:
       - id: djlint-django
         exclude: _layouts/compress.html
