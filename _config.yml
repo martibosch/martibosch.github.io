@@ -59,7 +59,7 @@ authors:
     bio: *bio
     external-image: false
     picture: assets/images/profile.png
-    twitter: mortybosch
+    # twitter: mortybosch
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
