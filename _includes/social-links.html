@@ -72,4 +72,13 @@
             <i class="fa-regular fa-envelope"></i>
         </a>
     {% endif %}
+    {% if site.scholar %}
+        <a class="link"
+           data-title="scholar.google.com/citations?user={{ site.scholar }}"
+           href="https://scholar.google.com/citations?user={{ site.scholar }}"
+           target="_blank"
+           rel="noopener">
+            <i class="fa-brands fa-google-scholar"></i>
+        </a>
+    {% endif %}
 </div>
